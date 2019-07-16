@@ -6,6 +6,6 @@ package com.hyd.base.common
  */
 class BaseConstant {
     companion object {
-        val SERVER_ADDRESS = ""
+        const val SERVER_ADDRESS = "http://192.168.60.105:8080/Kotlin_war_exploded/"
     }
 }

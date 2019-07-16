@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.hyd.user">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.hyd.user">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
             android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".ui.activity.RegisterActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
