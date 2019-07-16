@@ -18,11 +18,11 @@ class RegisterActivity : BaseMvpActivity<RegisterPresenter>(), RegisterView {
         mPresenter.mView = this
 
         mRegisterBtn.setOnClickListener {
-            mPresenter.register("18910229999","123456")
+            mPresenter.register("18910229999","123456", "123456")
         }
     }
 
-    override fun onRegisterResult(result: String) {
-        toast(result)
+    override fun onRegisterResult(result: Boolean) {
+        toast("注册成功")
     }
 }
