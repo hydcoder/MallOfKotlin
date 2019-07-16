@@ -42,7 +42,14 @@ dependencies {
     implementation "org.jetbrains.anko:anko-support-v4-commons:0.10.8"
 
     // RxKotlin and RxAndroid
-    api 'io.reactivex:rxkotlin:1.0.0'
-    api 'io.reactivex:rxandroid:1.2.1'
+    api "io.reactivex:rxkotlin:$rx_kotlin_version"
+    api "io.reactivex:rxandroid:$rx_android_version"
+
+    //retrofit2
+    api "com.squareup.okhttp3:okhttp:$ok_http_version"
+    api "com.squareup.retrofit2:retrofit:$retrofit_version"
+    api "com.squareup.okhttp3:logging-interceptor:$ok_http_version"
+    api "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    api "com.squareup.retrofit2:adapter-rxjava:$retrofit_version"
 
 }
