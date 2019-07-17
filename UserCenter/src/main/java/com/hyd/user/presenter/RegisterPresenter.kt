@@ -4,12 +4,15 @@ import com.hyd.base.ext.execute
 import com.hyd.base.presenter.BasePresenter
 import com.hyd.base.rx.BaseSubscribe
 import com.hyd.user.presenter.view.RegisterView
-import com.hyd.user.service.impl.UserServiceImpl
+import com.hyd.user.service.UserService
+import javax.inject.Inject
 
-class RegisterPresenter: BasePresenter<RegisterView>() {
+class RegisterPresenter @Inject constructor(): BasePresenter<RegisterView>() {
+
+    @Inject
+    lateinit var userService: UserService
+
     fun register(mobile:String, verifyCode:String, pwd:String){
-
-        val userService = UserServiceImpl()
 
         userService.register(mobile, verifyCode, pwd)
             .execute(object : BaseSubscribe<Boolean>(){

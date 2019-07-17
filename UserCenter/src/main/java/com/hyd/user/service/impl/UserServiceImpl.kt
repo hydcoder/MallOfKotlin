@@ -6,15 +6,18 @@ import com.hyd.user.data.repository.UserRepository
 import com.hyd.user.service.UserService
 import rx.Observable
 import rx.functions.Func1
+import javax.inject.Inject
 
 /**
  * Author: Created by HYD on 2019/7/16.
  * 以梦为马，明日天涯。
  */
-class UserServiceImpl : UserService {
-    override fun register(mobile: String, verifyCode: String, pwd: String): Observable<Boolean> {
+class UserServiceImpl @Inject constructor(): UserService {
 
-        val repository = UserRepository()
+    @Inject
+    lateinit var repository:UserRepository
+
+    override fun register(mobile: String, verifyCode: String, pwd: String): Observable<Boolean> {
 
         return repository.register(mobile, verifyCode, pwd).flatMap(object : Func1<BaseResp<String>, Observable<Boolean>>{
             override fun call(t: BaseResp<String>): Observable<Boolean> {
