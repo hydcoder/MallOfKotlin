@@ -34,5 +34,5 @@ fun View.onClick(listener: View.OnClickListener) {
 }
 
 fun View.onClick(method: () -> Unit) {
-    this.setOnClickListener { method }
+    this.setOnClickListener { method() }
 }

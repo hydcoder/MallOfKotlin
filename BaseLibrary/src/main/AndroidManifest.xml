@@ -1,2 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.hyd.base"/>
+          package="com.hyd.base">
+
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+</manifest>
