@@ -1,4 +1,4 @@
-package com.hyd.base.ui.activity
+package com.hyd.base.ui.fragment
 
 import android.os.Bundle
 import com.hyd.base.common.BaseApplication
@@ -10,7 +10,7 @@ import com.hyd.base.presenter.BasePresenter
 import com.hyd.base.presenter.view.BaseView
 import javax.inject.Inject
 
-open abstract class BaseMvpActivity<T:BasePresenter<*>>:BaseActivity(), BaseView{
+open abstract class BaseMvpFragment<T:BasePresenter<*>>:BaseFragment(), BaseView{
 
     lateinit var activityComponent: ActivityComponent
 
@@ -34,8 +34,8 @@ open abstract class BaseMvpActivity<T:BasePresenter<*>>:BaseActivity(), BaseView
     }
 
     private fun initActivityInjection() {
-        activityComponent = DaggerActivityComponent.builder().appComponent((application as BaseApplication).appComponent)
-                .activityModule(ActivityModule(this)).lifecycleProviderModule(LifecycleProviderModule(this)).build()
+        activityComponent = DaggerActivityComponent.builder().appComponent((activity?.application as BaseApplication).appComponent)
+                .activityModule(ActivityModule(activity!!)).lifecycleProviderModule(LifecycleProviderModule(this)).build()
     }
 
     abstract fun injectComponent()
