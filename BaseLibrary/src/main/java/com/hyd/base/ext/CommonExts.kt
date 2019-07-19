@@ -1,10 +1,13 @@
 package com.hyd.base.ext
 
 import android.view.View
+import android.widget.Button
+import android.widget.EditText
 import com.hyd.base.data.protocal.BaseResp
 import com.hyd.base.rx.BaseFunc
 import com.hyd.base.rx.BaseFuncBoolean
 import com.hyd.base.rx.BaseSubscribe
+import com.kotlin.base.widgets.DefaultTextWatcher
 import com.trello.rxlifecycle.LifecycleProvider
 import rx.Observable
 import rx.android.schedulers.AndroidSchedulers
@@ -35,4 +38,13 @@ fun View.onClick(listener: View.OnClickListener) {
 
 fun View.onClick(method: () -> Unit) {
     this.setOnClickListener { method() }
+}
+
+fun Button.enable(editText: EditText, method: () -> Boolean) {
+    val btn = this
+    editText.addTextChangedListener(object: DefaultTextWatcher(){
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            btn.isEnabled = method()
+        }
+    })
 }

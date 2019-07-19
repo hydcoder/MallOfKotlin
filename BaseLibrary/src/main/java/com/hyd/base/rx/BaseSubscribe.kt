@@ -18,5 +18,6 @@ open class BaseSubscribe<T>(private val baseView: BaseView): Subscriber<T>() {
 
     override fun onError(e: Throwable?) {
         baseView.hideLoading()
+        e?.message?.let { baseView.onError(it) }
     }
 }
