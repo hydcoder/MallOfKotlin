@@ -28,6 +28,10 @@ class RegisterActivity: BaseMvpActivity<RegisterPresenter>(), RegisterView {
         mRegisterBtn.onClick {
             mPresenter.register(mMobileEt.text.toString(),mVerifyCodeEt.text.toString(), mPwdEt.text.toString())
         }
+
+        mBtnCode.onClick {
+            mBtnCode.requestSendVerifyNumber()
+        }
     }
 
     override fun onRegisterResult(result: String) {

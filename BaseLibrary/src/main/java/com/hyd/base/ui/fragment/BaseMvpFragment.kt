@@ -8,6 +8,7 @@ import com.hyd.base.injection.module.ActivityModule
 import com.hyd.base.injection.module.LifecycleProviderModule
 import com.hyd.base.presenter.BasePresenter
 import com.hyd.base.presenter.view.BaseView
+import org.jetbrains.anko.support.v4.toast
 import javax.inject.Inject
 
 open abstract class BaseMvpFragment<T:BasePresenter<*>>:BaseFragment(), BaseView{
@@ -23,7 +24,8 @@ open abstract class BaseMvpFragment<T:BasePresenter<*>>:BaseFragment(), BaseView
     override fun hideLoading() {
     }
 
-    override fun onError() {
+    override fun onError(text: String) {
+        toast(text)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -8,4 +8,10 @@
         <attr name="rightText" format="string"/>
     </declare-styleable>
 
+    <!-- LabelText自定义属性 -->
+    <declare-styleable name="LabelText">
+        <attr name="labelText" format="string"/>
+        <attr name="contentText" format="string"/>
+    </declare-styleable>
+
 </resources>

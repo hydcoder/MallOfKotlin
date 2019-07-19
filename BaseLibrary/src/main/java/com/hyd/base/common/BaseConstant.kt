@@ -7,5 +7,6 @@ package com.hyd.base.common
 class BaseConstant {
     companion object {
         const val SERVER_ADDRESS = "http://192.168.60.105:8080/"
+        const val TABLE_PREFS = "kotlin_mall"
     }
 }

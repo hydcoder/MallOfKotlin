@@ -1,6 +1,7 @@
 package com.hyd.base.common
 
 import android.app.Application
+import android.content.Context
 import com.hyd.base.injection.component.AppComponent
 import com.hyd.base.injection.component.DaggerAppComponent
 import com.hyd.base.injection.module.AppModule
@@ -17,9 +18,14 @@ class BaseApplication: Application() {
         super.onCreate()
 
         initInjection()
+        context = this
     }
 
     private fun initInjection() {
         appComponent = DaggerAppComponent.builder().appModule(AppModule(this)).build()
+    }
+
+    companion object {
+        lateinit var context: Context
     }
 }
