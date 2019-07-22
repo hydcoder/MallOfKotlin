@@ -12,11 +12,11 @@ import org.jetbrains.anko.find
  * Created by hydCoder on 2019/7/19.
  * 以梦为马，明日天涯。
  */
-class ProgressLoading private constructor(context: Context, theme: Int): Dialog(context, theme) {
+class ProgressLoading private constructor(context: Context, theme: Int) : Dialog(context, theme) {
 
     companion object {
-        private lateinit var mDialog:ProgressLoading
-        private var animDrawable:AnimationDrawable? = null
+        private lateinit var mDialog: ProgressLoading
+        private var animDrawable: AnimationDrawable? = null
 
         fun create(context: Context): ProgressLoading {
             mDialog = ProgressLoading(context, R.style.LightProgressDialog)

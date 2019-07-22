@@ -7,7 +7,7 @@ import rx.Subscriber
  * Created by hydCoder on 2019/7/16.
  * 以梦为马，明日天涯。
  */
-open class BaseSubscribe<T>(private val baseView: BaseView): Subscriber<T>() {
+open class BaseSubscriber<T>(private val baseView: BaseView): Subscriber<T>() {
 
     override fun onNext(t: T) {
     }

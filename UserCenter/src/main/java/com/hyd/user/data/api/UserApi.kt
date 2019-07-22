@@ -1,7 +1,7 @@
 package com.hyd.user.data.api
 
 import com.hyd.base.data.protocal.BaseResp
-import com.hyd.user.data.protocal.RegisterReq
+import com.hyd.user.data.protocal.*
 import retrofit2.http.Body
 import retrofit2.http.POST
 import rx.Observable
@@ -13,4 +13,13 @@ import rx.Observable
 interface UserApi {
     @POST("userCenter/register")
     fun register(@Body req: RegisterReq): Observable<BaseResp<String>>
+
+    @POST("userCenter/login")
+    fun login(@Body req: LoginReq): Observable<BaseResp<UserInfo>>
+
+    @POST("userCenter/forgetPwd")
+    fun forgetPwd(@Body req: ForgetPwdReq): Observable<BaseResp<String>>
+
+    @POST("userCenter/resetPwd")
+    fun resetPwd(@Body req: ResetPwdReq): Observable<BaseResp<String>>
 }

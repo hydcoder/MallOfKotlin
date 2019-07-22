@@ -12,7 +12,7 @@ import com.hyd.base.widgets.ProgressLoading
 import org.jetbrains.anko.toast
 import javax.inject.Inject
 
-open abstract class BaseMvpActivity<T:BasePresenter<*>>: BaseActivity(), BaseView{
+open abstract class BaseMvpActivity<T : BasePresenter<*>> : BaseActivity(), BaseView {
 
     lateinit var activityComponent: ActivityComponent
     lateinit var loadingDialog: ProgressLoading
@@ -41,7 +41,8 @@ open abstract class BaseMvpActivity<T:BasePresenter<*>>: BaseActivity(), BaseVie
     }
 
     private fun initActivityInjection() {
-        activityComponent = DaggerActivityComponent.builder().appComponent((application as BaseApplication).appComponent)
+        activityComponent =
+            DaggerActivityComponent.builder().appComponent((application as BaseApplication).appComponent)
                 .activityModule(ActivityModule(this)).lifecycleProviderModule(LifecycleProviderModule(this)).build()
     }
 

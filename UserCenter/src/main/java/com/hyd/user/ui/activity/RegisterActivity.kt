@@ -56,9 +56,18 @@ class RegisterActivity: BaseMvpActivity<RegisterPresenter>(), RegisterView, View
     override fun onClick(v: View?) {
         when(v?.id) {
             R.id.mRegisterBtn -> {
+                if (mPwdEt.text.toString() != mPwdConfirmEt.text.toString()) {
+                    toast("两次输入的密码不一致")
+                    return
+                }
+                if (mMobileEt.text.length != 11) {
+                    toast("请输入正确的手机号码")
+                    return
+                }
                 mPresenter.register(mMobileEt.text.toString(),mVerifyCodeEt.text.toString(), mPwdEt.text.toString())
             }
             R.id.mVerifyCodeBtn -> {
+                toast("验证码发送成功")
                 mVerifyCodeBtn.requestSendVerifyNumber()
             }
         }

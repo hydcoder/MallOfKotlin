@@ -12,13 +12,16 @@
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning"
             android:name="com.hyd.base.common.BaseApplication">
-        <activity android:name=".ui.activity.RegisterActivity">
+        <activity android:name=".ui.activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".ui.activity.RegisterActivity"/>
+        <activity android:name=".ui.activity.ForgetPwdActivity"/>
+        <activity android:name=".ui.activity.ResetPwdActivity"/>
     </application>
 
 </manifest>

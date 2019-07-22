@@ -6,7 +6,7 @@ import android.widget.EditText
 import com.hyd.base.data.protocal.BaseResp
 import com.hyd.base.rx.BaseFunc
 import com.hyd.base.rx.BaseFuncBoolean
-import com.hyd.base.rx.BaseSubscribe
+import com.hyd.base.rx.BaseSubscriber
 import com.kotlin.base.widgets.DefaultTextWatcher
 import com.trello.rxlifecycle.LifecycleProvider
 import rx.Observable
@@ -17,7 +17,7 @@ import rx.schedulers.Schedulers
  * Created by hydCoder on 2019/7/16.
  * 以梦为马，明日天涯。
  */
-fun <T> Observable<T>.execute(subscriber: BaseSubscribe<T>, lifecycleProvider: LifecycleProvider<*>) {
+fun <T> Observable<T>.execute(subscriber: BaseSubscriber<T>, lifecycleProvider: LifecycleProvider<*>) {
     this.observeOn(AndroidSchedulers.mainThread())
         .compose(lifecycleProvider.bindToLifecycle())
         .subscribeOn(Schedulers.io())

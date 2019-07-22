@@ -3,16 +3,16 @@ package com.hyd.user.presenter
 import com.hyd.base.ext.execute
 import com.hyd.base.presenter.BasePresenter
 import com.hyd.base.rx.BaseSubscriber
-import com.hyd.user.presenter.view.RegisterView
+import com.hyd.user.presenter.view.ForgetPwdView
 import com.hyd.user.service.UserService
 import javax.inject.Inject
 
-class RegisterPresenter @Inject constructor(): BasePresenter<RegisterView>() {
+class ForgetPwdPresenter @Inject constructor(): BasePresenter<ForgetPwdView>() {
 
     @Inject
     lateinit var userService: UserService
 
-    fun register(mobile:String, verifyCode:String, pwd:String){
+    fun forgetPwd(mobile: String, verifyCode: String){
 
         if (!checkNetWork()) {
             return
@@ -20,11 +20,12 @@ class RegisterPresenter @Inject constructor(): BasePresenter<RegisterView>() {
 
         mView.showLoading()
 
-        userService.register(mobile, verifyCode, pwd)
+        userService.forgetPwd(mobile, verifyCode)
             .execute(object : BaseSubscriber<Boolean>(mView){
                 override fun onNext(t: Boolean) {
-                    if (t)
-                        mView.onRegisterResult("注册成功")
+                    if (t) {
+                        mView.onForgetResult("验证成功")
+                    }
                 }
             }, lifecycleProvider)
     }
