@@ -1,6 +1,7 @@
 package com.hyd.base.data.net
 
 import com.hyd.base.common.BaseConstant
+import com.kotlin.base.utils.AppPrefsUtils
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -28,6 +29,7 @@ class RetrofitFactory private constructor() {
                 .newBuilder()
 //                .addHeader("charset", "utf-8")
                 .addHeader("Content-Type", "application/json")
+                .addHeader("token", AppPrefsUtils.getString(BaseConstant.KEY_SP_TOKEN))
                 .build()
             chain.proceed(request)
         }
