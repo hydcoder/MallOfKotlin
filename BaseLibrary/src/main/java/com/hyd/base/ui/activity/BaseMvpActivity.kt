@@ -35,7 +35,6 @@ open abstract class BaseMvpActivity<T : BasePresenter<*>> : BaseActivity(), Base
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        loadingDialog = ProgressLoading.create(this)
         initActivityInjection()
         injectComponent()
     }
@@ -47,5 +46,10 @@ open abstract class BaseMvpActivity<T : BasePresenter<*>> : BaseActivity(), Base
     }
 
     abstract fun injectComponent()
+
+    override fun onResume() {
+        super.onResume()
+        loadingDialog = ProgressLoading.create(this)
+    }
 
 }

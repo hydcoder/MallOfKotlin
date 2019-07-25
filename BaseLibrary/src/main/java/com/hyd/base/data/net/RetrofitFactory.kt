@@ -1,7 +1,7 @@
 package com.hyd.base.data.net
 
 import com.hyd.base.common.BaseConstant
-import com.kotlin.base.utils.AppPrefsUtils
+import com.hyd.base.utils.AppPrefsUtils
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

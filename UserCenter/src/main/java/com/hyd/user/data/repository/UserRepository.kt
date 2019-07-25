@@ -35,4 +35,10 @@ class UserRepository @Inject constructor(){
             ResetPwdReq(mobile, pwd)
         )
     }
+
+    fun editUser(userIcon: String, userName: String, userGender: String, userSign: String): Observable<BaseResp<UserInfo>> {
+        return RetrofitFactory.instance.create(UserApi::class.java).editUser(
+            EditUserReq(userIcon, userName, userGender, userSign)
+        )
+    }
 }

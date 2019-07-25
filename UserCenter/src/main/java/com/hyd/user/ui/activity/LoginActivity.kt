@@ -10,6 +10,7 @@ import com.hyd.user.injection.component.DaggerUserComponent
 import com.hyd.user.injection.module.UserModule
 import com.hyd.user.presenter.LoginPresenter
 import com.hyd.user.presenter.view.LoginView
+import com.hyd.user.utils.UserPrefsUtils
 import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
@@ -58,6 +59,7 @@ class LoginActivity: BaseMvpActivity<LoginPresenter>(), LoginView, View.OnClickL
 
     override fun onLoginResult(result: UserInfo) {
         toast("登录成功")
+        UserPrefsUtils.putUserInfo(result)
         startActivity<UserInfoActivity>()
     }
 
