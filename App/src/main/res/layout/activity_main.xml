@@ -5,6 +5,13 @@
         style="@style/MatchMatch.Vertical"
         android:gravity="bottom"
         tools:context=".ui.activity.MainActivity">
+    
+    <FrameLayout
+            android:id="@+id/mContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+    </FrameLayout>
 
     <com.hyd.base.widgets.BottomNavBar
             android:id="@+id/mBottomNavBar"
