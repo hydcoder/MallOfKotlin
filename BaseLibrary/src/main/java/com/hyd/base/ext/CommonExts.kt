@@ -3,10 +3,12 @@ package com.hyd.base.ext
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import com.hyd.base.data.protocal.BaseResp
 import com.hyd.base.rx.BaseFunc
 import com.hyd.base.rx.BaseFuncBoolean
 import com.hyd.base.rx.BaseSubscriber
+import com.kotlin.base.utils.GlideUtils
 import com.kotlin.base.widgets.DefaultTextWatcher
 import com.trello.rxlifecycle.LifecycleProvider
 import rx.Observable
@@ -47,4 +49,8 @@ fun Button.enable(editText: EditText, method: () -> Boolean) {
             btn.isEnabled = method()
         }
     })
+}
+
+fun ImageView.loadIamge(url: String) {
+    GlideUtils.loadUrlImage(context, url, this)
 }

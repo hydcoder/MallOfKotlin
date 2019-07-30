@@ -78,6 +78,10 @@ dependencies {
     api 'com.ashokvarma.android:bottom-navigation-bar:2.0.2'
     //Banner
     api 'com.youth.banner:banner:1.4.10'
+    //标签
+    implementation 'com.github.shts:TriangleLabelView:1.1.2'
+    //画廊
+    api 'com.github.crosswall:Android-Coverflow:release-v1.0.4'
 
     //MultiStateView
     api "com.github.Kennyc1012:MultiStateView:$multi_state_view_version"
