@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.hyd.base.ext.loadIamge
+import com.hyd.base.ext.loadImage
 import com.hyd.base.ui.fragment.BaseFragment
 import com.hyd.base.utils.AppPrefsUtils
 import com.hyd.mallofkotlin.R
@@ -44,7 +44,7 @@ class MineFragment : BaseFragment(), View.OnClickListener {
 
     private fun loadData() {
         if (isLogined()) {
-            mUserIconIv.loadIamge(AppPrefsUtils.getString(ProviderConstant.KEY_SP_USER_ICON))
+            mUserIconIv.loadImage(AppPrefsUtils.getString(ProviderConstant.KEY_SP_USER_ICON))
             mUserNameTv.text = AppPrefsUtils.getString(ProviderConstant.KEY_SP_USER_NAME)
         } else {
             mUserIconIv.setImageResource(R.drawable.icon_default_user)

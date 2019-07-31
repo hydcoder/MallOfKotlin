@@ -3,11 +3,14 @@ package com.hyd.mallofkotlin.ui.activity
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import com.ashokvarma.bottomnavigation.BottomNavigationBar
+import com.hyd.base.common.AppManager
 import com.hyd.base.ui.activity.BaseActivity
+import com.hyd.goodscenter.ui.fragment.CategoryFragment
 import com.hyd.mallofkotlin.R
 import com.hyd.mallofkotlin.ui.fragment.HomeFragment
 import com.hyd.mallofkotlin.ui.fragment.MineFragment
 import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.toast
 import java.util.*
 
 class MainActivity : BaseActivity() {
@@ -15,10 +18,12 @@ class MainActivity : BaseActivity() {
     private val mFragments: Stack<Fragment> = Stack()
 
     private val mHomeFragment: HomeFragment by lazy { HomeFragment() }
-    private val mCategoryFragment: HomeFragment by lazy { HomeFragment() }
+    private val mCategoryFragment: CategoryFragment by lazy { CategoryFragment() }
     private val mCartFragment: HomeFragment by lazy { HomeFragment() }
     private val mMsgFragment: HomeFragment by lazy { HomeFragment() }
     private val mMineFragment: MineFragment by lazy { MineFragment() }
+
+    private var pressTime: Long = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -79,6 +84,16 @@ class MainActivity : BaseActivity() {
         }
         manager.show(mFragments[position])
         manager.commit()
+    }
+
+    override fun onBackPressed() {
+        val time = System.currentTimeMillis()
+        if (time - pressTime > 2000) {
+            toast("再按一次退出应用程序")
+            pressTime = time
+        } else {
+            AppManager.instance.exitApp(this)
+        }
     }
 }
 

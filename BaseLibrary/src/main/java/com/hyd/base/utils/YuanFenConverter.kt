@@ -126,6 +126,6 @@ object YuanFenConverter {
         分 转换为 元，带单位
      */
     fun changeF2YWithUnit(amount:Long):String{
-        return "¥${YuanFenConverter.changeF2Y(amount)}"
+        return "¥${changeF2Y(amount)}"
     }
 }

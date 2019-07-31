@@ -6,7 +6,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.hyd.base.ext.loadIamge
+import com.hyd.base.ext.loadImage
 import com.hyd.mallofkotlin.R
 import com.kotlin.base.ui.adapter.BaseRecyclerViewAdapter
 import kotlinx.android.synthetic.main.layout_home_discount_item.view.*
@@ -25,7 +25,7 @@ class HomeDiscountAdapter(mContext: Context) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         super.onBindViewHolder(holder, position)
-        holder.itemView.mGoodsIconIv.loadIamge(dataList.get(position))
+        holder.itemView.mGoodsIconIv.loadImage(dataList.get(position))
 
         // 假数据
         holder.itemView.mDiscountAfterTv.text = "￥99.80"

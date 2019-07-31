@@ -1,16 +1,20 @@
 package com.hyd.base.ext
 
+import android.graphics.drawable.AnimationDrawable
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import com.hyd.base.R
 import com.hyd.base.data.protocal.BaseResp
 import com.hyd.base.rx.BaseFunc
 import com.hyd.base.rx.BaseFuncBoolean
 import com.hyd.base.rx.BaseSubscriber
+import com.kennyc.view.MultiStateView
 import com.kotlin.base.utils.GlideUtils
 import com.kotlin.base.widgets.DefaultTextWatcher
 import com.trello.rxlifecycle.LifecycleProvider
+import org.jetbrains.anko.find
 import rx.Observable
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
@@ -51,6 +55,20 @@ fun Button.enable(editText: EditText, method: () -> Boolean) {
     })
 }
 
-fun ImageView.loadIamge(url: String) {
+fun ImageView.loadImage(url: String) {
     GlideUtils.loadUrlImage(context, url, this)
+}
+
+/*
+    多状态视图开始加载
+ */
+fun MultiStateView.startLoading(){
+    viewState = MultiStateView.VIEW_STATE_LOADING
+    val loadingView = getView(MultiStateView.VIEW_STATE_LOADING)
+    val animBackground = loadingView!!.find<View>(R.id.loading_anim_view).background
+    (animBackground as AnimationDrawable).start()
+}
+
+fun View.setVisible(isVisible: Boolean) {
+    this.visibility = if (isVisible) View.VISIBLE else View.GONE
 }

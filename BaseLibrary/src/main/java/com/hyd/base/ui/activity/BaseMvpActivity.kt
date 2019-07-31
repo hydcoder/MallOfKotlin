@@ -17,6 +17,7 @@ open abstract class BaseMvpActivity<T : BasePresenter<*>> : BaseActivity(), Base
     lateinit var activityComponent: ActivityComponent
     lateinit var loadingDialog: ProgressLoading
 
+    //Presenter泛型，Dagger注入
     @Inject
     lateinit var mPresenter: T
 
@@ -37,6 +38,8 @@ open abstract class BaseMvpActivity<T : BasePresenter<*>> : BaseActivity(), Base
 
         initActivityInjection()
         injectComponent()
+
+        loadingDialog = ProgressLoading.create(this)
     }
 
     private fun initActivityInjection() {
@@ -46,10 +49,5 @@ open abstract class BaseMvpActivity<T : BasePresenter<*>> : BaseActivity(), Base
     }
 
     abstract fun injectComponent()
-
-    override fun onResume() {
-        super.onResume()
-        loadingDialog = ProgressLoading.create(this)
-    }
 
 }
