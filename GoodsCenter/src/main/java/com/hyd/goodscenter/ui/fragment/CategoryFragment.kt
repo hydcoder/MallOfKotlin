@@ -10,6 +10,7 @@ import com.hyd.base.ext.setVisible
 import com.hyd.base.ext.startLoading
 import com.hyd.base.ui.fragment.BaseMvpFragment
 import com.hyd.goodscenter.R
+import com.hyd.goodscenter.common.GoodsConstant.Companion.KEY_CATEGORY_ID
 import com.hyd.goodscenter.data.protocal.Category
 import com.hyd.goodscenter.injection.component.DaggerCategoryComponent
 import com.hyd.goodscenter.injection.module.CategoryModule
@@ -71,7 +72,7 @@ class CategoryFragment: BaseMvpFragment<CategoryPresenter>(), CategoryView {
         mSecondCategoryRv.adapter = secondAdapter
         secondAdapter.setOnItemClickListener(object : BaseRecyclerViewAdapter.OnItemClickListener<Category>{
             override fun onItemClick(item: Category, position: Int) {
-                startActivity<GoodsActivity>("categoryId" to item.id)
+                startActivity<GoodsActivity>(KEY_CATEGORY_ID to item.id)
             }
 
         })

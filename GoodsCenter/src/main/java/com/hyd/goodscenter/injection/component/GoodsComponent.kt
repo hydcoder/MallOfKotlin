@@ -4,6 +4,7 @@ import com.hyd.base.injection.PerComponentScope
 import com.hyd.base.injection.component.ActivityComponent
 import com.hyd.goodscenter.injection.module.GoodsModule
 import com.hyd.goodscenter.ui.activity.GoodsActivity
+import com.hyd.goodscenter.ui.fragment.GoodsDetailTabOneFragment
 import dagger.Component
 
 /**
@@ -17,4 +18,5 @@ import dagger.Component
 @Component(dependencies = arrayOf(ActivityComponent::class), modules = arrayOf(GoodsModule::class))
 interface GoodsComponent {
     fun inject(activity: GoodsActivity)
+    fun inject(fragment: GoodsDetailTabOneFragment)
 }

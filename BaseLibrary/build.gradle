@@ -83,13 +83,14 @@ dependencies {
     implementation 'com.github.shts:TriangleLabelView:1.1.2'
     //画廊
     api 'com.github.crosswall:Android-Coverflow:release-v1.0.4'
-
     //MultiStateView
     api "com.github.Kennyc1012:MultiStateView:$multi_state_view_version"
-
     api 'ren.qinc.numberbutton:numberbutton:0.0.1'
-
     //上下拉刷新
     api 'cn.bingoogolapple:bga-refreshlayout:1.1.7@aar'
+    //Kotlin Bus
+    api 'com.eightbitlab:rxbus:1.0.2'
+    //FlowLayout
+    api 'com.zhy:flowlayout-lib:1.0.3'
 
 }

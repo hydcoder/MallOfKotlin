@@ -5,8 +5,10 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.hyd.base.ext.onClick
 import com.hyd.base.ui.fragment.BaseFragment
 import com.hyd.base.widgets.BannerImageLoader
+import com.hyd.goodscenter.ui.activity.SearchGoodsActivity
 import com.hyd.mallofkotlin.R
 import com.hyd.mallofkotlin.common.*
 import com.hyd.mallofkotlin.ui.adapter.HomeDiscountAdapter
@@ -15,6 +17,7 @@ import com.youth.banner.BannerConfig
 import com.youth.banner.Transformer
 import kotlinx.android.synthetic.main.fragment_home.*
 import me.crosswall.lib.coverflow.CoverFlow
+import org.jetbrains.anko.support.v4.startActivity
 
 /**
  * Created by hydCoder on 2019/7/26.
@@ -49,6 +52,9 @@ class HomeFragment : BaseFragment() {
 
     private fun initNews() {
         mNewsFlipperView.setData(arrayOf("夏日炎炎，第一波福利还有30秒到达战场", "新用户立领1000元优惠券", "大牌上新，诚意满满"))
+        mSearchEt.onClick {
+            startActivity<SearchGoodsActivity>()
+        }
     }
 
     private fun initDiscount() {
