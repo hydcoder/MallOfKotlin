@@ -3,6 +3,7 @@ package com.hyd.goodscenter
 import android.widget.EditText
 import org.jetbrains.anko.find
 import ren.qinc.numberbutton.NumberButton
+import ren.qinc.numberbutton.R
 
 /**
  * Created by hydCoder on 2019/8/1.

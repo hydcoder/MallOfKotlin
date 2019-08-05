@@ -2,9 +2,12 @@ package com.hyd.goodscenter.ui.activity
 
 import android.os.Bundle
 import android.support.design.widget.TabLayout
+import com.alibaba.android.arouter.launcher.ARouter
+import com.hyd.base.ext.onClick
 import com.hyd.base.ui.activity.BaseActivity
 import com.hyd.goodscenter.R
 import com.hyd.goodscenter.ui.adapter.GoodsDetailVpAdapter
+import com.hyd.provider.router.RouterPath
 import kotlinx.android.synthetic.main.activity_goods_detail.*
 
 /**
@@ -25,5 +28,9 @@ class GoodsDetailActivity: BaseActivity() {
         mGoodsDetailVp.adapter = GoodsDetailVpAdapter(supportFragmentManager, this)
         //TabLayout关联ViewPager
         mGoodsDetailTab.setupWithViewPager(mGoodsDetailVp)
+
+        mAddCartBtn.onClick {
+            ARouter.getInstance().build(RouterPath.UserCenter.PATH_LOGIN).navigation()
+        }
     }
 }
