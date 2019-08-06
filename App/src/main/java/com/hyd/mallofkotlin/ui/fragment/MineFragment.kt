@@ -10,7 +10,7 @@ import com.hyd.base.utils.AppPrefsUtils
 import com.hyd.mallofkotlin.R
 import com.hyd.mallofkotlin.ui.activity.SettingActivity
 import com.hyd.provider.common.ProviderConstant
-import com.hyd.provider.common.isLogined
+import com.hyd.provider.common.isLogin
 import com.hyd.user.ui.activity.LoginActivity
 import com.hyd.user.ui.activity.UserInfoActivity
 import kotlinx.android.synthetic.main.fragment_me.*
@@ -43,7 +43,7 @@ class MineFragment : BaseFragment(), View.OnClickListener {
     }
 
     private fun loadData() {
-        if (isLogined()) {
+        if (isLogin()) {
             mUserIconIv.loadImage(AppPrefsUtils.getString(ProviderConstant.KEY_SP_USER_ICON))
             mUserNameTv.text = AppPrefsUtils.getString(ProviderConstant.KEY_SP_USER_NAME)
         } else {
@@ -55,7 +55,7 @@ class MineFragment : BaseFragment(), View.OnClickListener {
     override fun onClick(view: View) {
         when (view.id) {
             R.id.mUserIconIv, R.id.mUserNameTv -> {
-                if (isLogined()) {
+                if (isLogin()) {
                     activity!!.startActivity<UserInfoActivity>()
                 } else {
                     activity!!.startActivity<LoginActivity>()

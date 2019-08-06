@@ -16,8 +16,10 @@ import com.hyd.base.widgets.BannerImageLoader
 import com.hyd.goodscenter.R
 import com.hyd.goodscenter.common.GoodsConstant
 import com.hyd.goodscenter.data.protocal.Goods
+import com.hyd.goodscenter.event.AddCartEvent
 import com.hyd.goodscenter.event.GoodsDetailImageEvent
 import com.hyd.goodscenter.event.SkuChangedEvent
+import com.hyd.goodscenter.event.UpdateCartSizeEvent
 import com.hyd.goodscenter.injection.component.DaggerGoodsComponent
 import com.hyd.goodscenter.injection.module.GoodsModule
 import com.hyd.goodscenter.presenter.GoodsDetailPresenter
@@ -94,12 +96,14 @@ class GoodsDetailTabOneFragment : BaseMvpFragment<GoodsDetailPresenter>(), Goods
    */
     private fun initAnim() {
         mAnimationStart = ScaleAnimation(
-            1f, 0.95f, 1f, 0.95f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f)
+            1f, 0.95f, 1f, 0.95f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f
+        )
         mAnimationStart.duration = 300
         mAnimationStart.fillAfter = true
 
         mAnimationEnd = ScaleAnimation(
-            0.95f, 1f, 0.95f, 1f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f)
+            0.95f, 1f, 0.95f, 1f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f
+        )
         mAnimationEnd.duration = 300
         mAnimationEnd.fillAfter = true
     }
@@ -120,6 +124,7 @@ class GoodsDetailTabOneFragment : BaseMvpFragment<GoodsDetailPresenter>(), Goods
     }
 
     override fun onAddCartResult(result: Int) {
+        Bus.send(UpdateCartSizeEvent())
     }
 
     /*
@@ -140,10 +145,28 @@ class GoodsDetailTabOneFragment : BaseMvpFragment<GoodsDetailPresenter>(), Goods
                 mSkuSelectedTv.text =
                     mSkuPop.getSelectSku() + GoodsConstant.SKU_SEPARATOR + mSkuPop.getSelectCount() + "件"
             }.registerInBus(this)
+
+        Bus.observe<AddCartEvent>()
+            .subscribe {
+                addCart()
+            }.registerInBus(this)
     }
 
     override fun onDestroy() {
         super.onDestroy()
         Bus.unregister(this)
+    }
+
+    private fun addCart() {
+        mCurGoods?.let {
+            mPresenter.addCart(
+                it.id,
+                it.goodsDesc,
+                it.goodsDefaultIcon,
+                it.goodsDefaultPrice,
+                mSkuPop.getSelectCount(),
+                mSkuPop.getSelectSku()
+            )
+        }
     }
 }

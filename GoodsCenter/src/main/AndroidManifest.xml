@@ -6,5 +6,6 @@
 		<activity android:name=".ui.activity.SearchGoodsActivity"/>
 		<activity android:name=".ui.activity.GoodsDetailActivity"
 				android:theme="@style/AppTheme.Black"/>
+		<activity android:name=".ui.activity.CartActivity"/>
 	</application>
 </manifest>

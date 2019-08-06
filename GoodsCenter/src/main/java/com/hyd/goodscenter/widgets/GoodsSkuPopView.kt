@@ -16,6 +16,7 @@ import com.hyd.goodscenter.data.protocal.GoodsSku
 import com.hyd.goodscenter.event.AddCartEvent
 import com.hyd.goodscenter.event.SkuChangedEvent
 import com.hyd.goodscenter.getEditText
+import com.hyd.provider.common.afterLogin
 import com.kotlin.base.utils.YuanFenConverter
 import com.kotlin.base.widgets.DefaultTextWatcher
 import kotlinx.android.synthetic.main.layout_sku_pop.view.*
@@ -83,8 +84,10 @@ class GoodsSkuPopView(context: Activity) : PopupWindow(context), View.OnClickLis
         )
 
         mRootView.mAddCartBtn.onClick {
-            Bus.send(AddCartEvent())
-            dismiss()
+            afterLogin {
+                Bus.send(AddCartEvent())
+                dismiss()
+            }
         }
     }
 

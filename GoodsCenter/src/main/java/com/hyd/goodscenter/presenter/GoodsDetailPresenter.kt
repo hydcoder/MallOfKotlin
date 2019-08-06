@@ -7,6 +7,7 @@ import com.hyd.base.utils.AppPrefsUtils
 import com.hyd.goodscenter.common.GoodsConstant
 import com.hyd.goodscenter.data.protocal.Goods
 import com.hyd.goodscenter.presenter.view.GoodsDetailView
+import com.hyd.goodscenter.service.CartService
 import com.hyd.goodscenter.service.GoodsService
 import javax.inject.Inject
 
@@ -22,7 +23,7 @@ class GoodsDetailPresenter @Inject constructor() : BasePresenter<GoodsDetailView
     @Inject
     lateinit var goodsService: GoodsService
 
-//    @Inject
+    @Inject
     lateinit var cartService: CartService
 
     /*

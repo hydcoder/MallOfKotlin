@@ -1,6 +1,6 @@
 package com.hyd.goodscenter.injection.module
 
-import com.hyd.goodscenter.presenter.CartService
+import com.hyd.goodscenter.service.CartService
 import com.hyd.goodscenter.service.impl.CartServiceImpl
 import dagger.Module
 import dagger.Provides

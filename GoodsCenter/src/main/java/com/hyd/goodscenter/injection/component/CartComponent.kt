@@ -3,6 +3,7 @@ package com.hyd.goodscenter.injection.component
 import com.hyd.base.injection.PerComponentScope
 import com.hyd.base.injection.component.ActivityComponent
 import com.hyd.goodscenter.injection.module.CartModule
+import com.hyd.goodscenter.ui.fragment.CartFragment
 import dagger.Component
 
 /**
@@ -15,5 +16,5 @@ import dagger.Component
 @PerComponentScope
 @Component(dependencies = arrayOf(ActivityComponent::class), modules = arrayOf(CartModule::class))
 interface CartComponent {
-//    fun inject(fragment: GoodsDetailTabOneFragment)
+    fun inject(fragment: CartFragment)
 }
