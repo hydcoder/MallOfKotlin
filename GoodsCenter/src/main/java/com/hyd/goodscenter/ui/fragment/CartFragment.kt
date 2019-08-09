@@ -5,6 +5,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.alibaba.android.arouter.launcher.ARouter
 import com.eightbitlab.rxbus.Bus
 import com.eightbitlab.rxbus.registerInBus
 import com.hyd.base.ext.onClick
@@ -23,6 +24,8 @@ import com.hyd.goodscenter.injection.module.CartModule
 import com.hyd.goodscenter.presenter.CartListPresenter
 import com.hyd.goodscenter.presenter.view.CartListView
 import com.hyd.goodscenter.ui.adapter.CartGoodsAdapter
+import com.hyd.provider.common.ProviderConstant
+import com.hyd.provider.router.RouterPath
 import com.kennyc.view.MultiStateView
 import com.kotlin.base.utils.YuanFenConverter
 import kotlinx.android.synthetic.main.fragment_cart.*
@@ -171,7 +174,9 @@ class CartFragment : BaseMvpFragment<CartListPresenter>(), CartListView {
     }
 
     override fun onSubmitCartListResult(result: Int) {
-        toast("$result")
+        ARouter.getInstance().build(RouterPath.OrderCenter.PATH_ORDER_CONFIRM)
+            .withInt(ProviderConstant.KEY_ORDER_ID, result)
+            .navigation()
     }
 
     fun setLeftIvVisible(isVisible: Boolean) {
