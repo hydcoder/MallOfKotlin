@@ -24,6 +24,8 @@
 				android:id="@+id/mShipNameEt"
 				style="@style/WeightMatch"
 				android:textColor="@color/text_light_dark"
+				android:textSize="14sp"
+				android:hint="请输入收货人"
 				android:background="@null"/>
 	</LinearLayout>
 
@@ -43,6 +45,8 @@
 				android:id="@+id/mShipMobileEt"
 				style="@style/WeightMatch"
 				android:textColor="@color/text_light_dark"
+				android:textSize="14sp"
+				android:hint="请输入联系方式"
 				android:background="@null"
 				android:inputType="phone"/>
 	</LinearLayout>
@@ -62,6 +66,8 @@
 		<EditText
 				android:id="@+id/mShipAddressEt"
 				style="@style/WeightMatch"
+				android:textSize="14sp"
+				android:hint="请输入详细地址"
 				android:textColor="@color/text_light_dark"
 				android:background="@null"/>
 	</LinearLayout>

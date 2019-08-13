@@ -1,77 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-				xmlns:app="http://schemas.android.com/apk/res-auto"
-				style="@style/MatchMatch.Common">
+<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		style="@style/MatchMatch.Common">
 
 	<com.hyd.base.widgets.HeaderBar
 			android:id="@+id/mHeaderBar"
 			style="@style/MatchWrap"
 			app:titleText="订单确认"/>
 
-	<TextView
-			android:id="@+id/mSelectShipTv"
-			style="@style/MatchWrap"
-			android:text="选择收货人"
-			android:textColor="@color/text_light_dark"
-			android:drawableRight="@drawable/icon_arrow"
-			android:background="@drawable/border_all"
-			android:padding="@dimen/common_padding"
-			android:layout_below="@id/mHeaderBar"/>
+	<android.support.v4.widget.NestedScrollView
+			style="@style/MatchMatch"
+			android:layout_below="@id/mHeaderBar"
+			android:layout_above="@id/mBottomView">
 
-	<RelativeLayout
-			android:id="@+id/mShipView"
-			style="@style/MatchWrap"
-			android:background="@drawable/border_all"
-			android:paddingTop="@dimen/common_padding_middle"
-			android:paddingBottom="@dimen/common_padding_middle"
-			android:visibility="gone"
-			android:layout_marginTop="@dimen/common_margin"
-			android:layout_below="@id/mSelectShipTv">
+		<LinearLayout
+				style="@style/MatchMatch.Vertical">
 
-		<TextView
-				android:id="@+id/mShipNameTv"
-				style="@style/OrderShipName"/>
+			<TextView
+					android:id="@+id/mSelectShipTv"
+					style="@style/MatchWrap"
+					android:text="选择收货人"
+					android:textColor="@color/text_light_dark"
+					android:drawableRight="@drawable/icon_arrow"
+					android:background="@drawable/border_all"
+					android:padding="@dimen/common_padding"
+					android:layout_below="@id/mHeaderBar"/>
 
-		<TextView
-				android:id="@+id/mShipAddressTv"
-				android:background="@null"
-				android:paddingBottom="@dimen/common_padding_small"
-				android:layout_below="@id/mShipNameTv"
-				style="@style/OrderShipAddress"/>
+			<RelativeLayout
+					android:id="@+id/mShipView"
+					style="@style/MatchWrap"
+					android:background="@drawable/border_all"
+					android:paddingTop="@dimen/common_padding_middle"
+					android:paddingBottom="@dimen/common_padding_middle"
+					android:visibility="gone"
+					android:layout_marginTop="@dimen/common_margin"
+					android:layout_below="@id/mSelectShipTv">
 
-		<ImageView
-				style="@style/WrapWrap"
-				android:layout_marginRight="@dimen/common_margin"
-				android:src="@drawable/icon_arrow"
-				android:layout_alignParentRight="true"
-				android:layout_centerVertical="true"/>
-	</RelativeLayout>
+				<TextView
+						android:id="@+id/mShipNameTv"
+						style="@style/OrderShipName"/>
 
-	<android.support.v7.widget.RecyclerView
-			android:id="@+id/mOrderGoodsRv"
-			android:layout_height="wrap_content"
-			android:layout_marginTop="@dimen/common_margin"
-			android:layout_below="@id/mShipView"
-			style="@style/commonRecyclerView"/>
+				<TextView
+						android:id="@+id/mShipAddressTv"
+						android:background="@null"
+						android:paddingBottom="@dimen/common_padding_small"
+						android:layout_below="@id/mShipNameTv"
+						style="@style/OrderShipAddress"/>
 
-	<RelativeLayout
-			android:background="@drawable/border_all"
-			android:padding="@dimen/common_padding"
-			style="@style/MatchWrap"
-			android:layout_below="@id/mOrderGoodsRv">
+				<ImageView
+						style="@style/WrapWrap"
+						android:layout_marginRight="@dimen/common_margin"
+						android:src="@drawable/icon_arrow"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"/>
+			</RelativeLayout>
 
-		<TextView
-				style="@style/WrapWrap"
-				android:text="支付配送"
-				android:layout_centerVertical="true"/>
+			<android.support.v7.widget.RecyclerView
+					android:id="@+id/mOrderGoodsRv"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/common_margin"
+					android:layout_below="@id/mShipView"
+					style="@style/commonRecyclerView"/>
 
-		<TextView
-				style="@style/WrapWrap"
-				android:text="在线支付\n快递运输"
-				android:textColor="@color/text_light_dark"
-				android:layout_alignParentRight="true"
-				android:lineSpacingMultiplier="1.3"/>
-	</RelativeLayout>
+			<RelativeLayout
+					android:background="@drawable/border_all"
+					android:padding="@dimen/common_padding"
+					style="@style/MatchWrap"
+					android:layout_below="@id/mOrderGoodsRv">
+
+				<TextView
+						style="@style/WrapWrap"
+						android:text="支付配送"
+						android:layout_centerVertical="true"/>
+
+				<TextView
+						style="@style/WrapWrap"
+						android:text="在线支付\n快递运输"
+						android:textColor="@color/text_light_dark"
+						android:layout_alignParentRight="true"
+						android:lineSpacingMultiplier="1.3"/>
+			</RelativeLayout>
+
+		</LinearLayout>
+
+	</android.support.v4.widget.NestedScrollView>
 
 	<RelativeLayout
 			android:id="@+id/mBottomView"

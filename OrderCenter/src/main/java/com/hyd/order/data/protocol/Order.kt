@@ -1,7 +1,5 @@
 package com.hyd.order.data.protocol
 
-import com.kotlin.order.data.protocol.ShipAddress
-
 /*
     订单数据类
  */

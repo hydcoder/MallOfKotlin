@@ -32,6 +32,7 @@ dependencies {
     api project(':Provider')
     api project(':MessageCenter')
     api project(':GoodsCenter')
+    api project(':OrderCenter')
     if (isUserModule.toBoolean()){
         api project(':UserCenter')
     }

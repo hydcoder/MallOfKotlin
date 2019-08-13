@@ -1,2 +1,11 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-		  package="com.hyd.order"/>
+<manifest
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		package="com.hyd.order">
+
+	<application>
+		<activity android:name=".ui.activity.OrderConfirmActivity"/>
+		<activity android:name=".ui.activity.ShipAddressActivity"/>
+		<activity android:name=".ui.activity.EditShipAddressActivity"/>
+	</application>
+
+</manifest>

@@ -9,6 +9,7 @@ import com.hyd.base.ui.fragment.BaseFragment
 import com.hyd.base.utils.AppPrefsUtils
 import com.hyd.mallofkotlin.R
 import com.hyd.mallofkotlin.ui.activity.SettingActivity
+import com.hyd.order.ui.activity.ShipAddressActivity
 import com.hyd.provider.common.ProviderConstant
 import com.hyd.provider.common.isLogin
 import com.hyd.user.ui.activity.LoginActivity
@@ -40,6 +41,7 @@ class MineFragment : BaseFragment(), View.OnClickListener {
         mUserIconIv.setOnClickListener(this)
         mUserNameTv.setOnClickListener(this)
         mSettingTv.setOnClickListener(this)
+        mAddressTv.setOnClickListener(this)
     }
 
     private fun loadData() {
@@ -60,6 +62,9 @@ class MineFragment : BaseFragment(), View.OnClickListener {
                 } else {
                     activity!!.startActivity<LoginActivity>()
                 }
+            }
+            R.id.mAddressTv -> {
+                activity!!.startActivity<ShipAddressActivity>()
             }
             R.id.mSettingTv -> {
                 activity!!.startActivity<SettingActivity>()
