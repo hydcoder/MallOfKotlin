@@ -9,10 +9,13 @@ import com.hyd.base.ui.fragment.BaseFragment
 import com.hyd.base.utils.AppPrefsUtils
 import com.hyd.mallofkotlin.R
 import com.hyd.mallofkotlin.ui.activity.SettingActivity
+import com.hyd.order.common.OrderConstant
+import com.hyd.order.common.OrderStatus
+import com.hyd.order.ui.activity.OrderActivity
 import com.hyd.order.ui.activity.ShipAddressActivity
 import com.hyd.provider.common.ProviderConstant
+import com.hyd.provider.common.afterLogin
 import com.hyd.provider.common.isLogin
-import com.hyd.user.ui.activity.LoginActivity
 import com.hyd.user.ui.activity.UserInfoActivity
 import kotlinx.android.synthetic.main.fragment_me.*
 import org.jetbrains.anko.startActivity
@@ -40,6 +43,12 @@ class MineFragment : BaseFragment(), View.OnClickListener {
     private fun initView() {
         mUserIconIv.setOnClickListener(this)
         mUserNameTv.setOnClickListener(this)
+
+        mWaitPayOrderTv.setOnClickListener(this)
+        mWaitConfirmOrderTv.setOnClickListener(this)
+        mCompleteOrderTv.setOnClickListener(this)
+        mAllOrderTv.setOnClickListener(this)
+
         mSettingTv.setOnClickListener(this)
         mAddressTv.setOnClickListener(this)
     }
@@ -57,12 +66,33 @@ class MineFragment : BaseFragment(), View.OnClickListener {
     override fun onClick(view: View) {
         when (view.id) {
             R.id.mUserIconIv, R.id.mUserNameTv -> {
-                if (isLogin()) {
+                afterLogin {
                     activity!!.startActivity<UserInfoActivity>()
-                } else {
-                    activity!!.startActivity<LoginActivity>()
                 }
             }
+
+            R.id.mWaitPayOrderTv -> {
+                afterLogin {
+                    activity!!.startActivity<OrderActivity>(OrderConstant.KEY_ORDER_STATUS to OrderStatus.ORDER_WAIT_PAY)
+                }
+            }
+
+            R.id.mWaitConfirmOrderTv -> {
+                afterLogin {
+                    activity!!.startActivity<OrderActivity>(OrderConstant.KEY_ORDER_STATUS to OrderStatus.ORDER_WAIT_CONFIRM)
+                }
+            }
+            R.id.mCompleteOrderTv -> {
+                afterLogin {
+                    activity!!.startActivity<OrderActivity>(OrderConstant.KEY_ORDER_STATUS to OrderStatus.ORDER_COMPLETED)
+                }
+            }
+            R.id.mAllOrderTv -> {
+                afterLogin {
+                    activity!!.startActivity<OrderActivity>()
+                }
+            }
+
             R.id.mAddressTv -> {
                 activity!!.startActivity<ShipAddressActivity>()
             }

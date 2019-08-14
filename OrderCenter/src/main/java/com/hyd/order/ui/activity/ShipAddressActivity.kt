@@ -4,18 +4,21 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import com.bigkoo.alertview.AlertView
 import com.bigkoo.alertview.OnItemClickListener
+import com.eightbitlab.rxbus.Bus
 import com.hyd.base.ext.onClick
 import com.hyd.base.ext.startLoading
 import com.hyd.base.ui.activity.BaseMvpActivity
 import com.hyd.order.R
 import com.hyd.order.common.OrderConstant
 import com.hyd.order.data.protocol.ShipAddress
+import com.hyd.order.event.SelectAddressEvent
 import com.hyd.order.injection.component.DaggerShipAddressComponent
 import com.hyd.order.injection.module.ShipAddressModule
 import com.hyd.order.presenter.ShipAddressPresenter
 import com.hyd.order.presenter.view.ShipAddressView
 import com.hyd.order.ui.adapter.ShipAddressAdapter
 import com.kennyc.view.MultiStateView
+import com.kotlin.base.ui.adapter.BaseRecyclerViewAdapter
 import kotlinx.android.synthetic.main.activity_address.*
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
@@ -70,6 +73,13 @@ class ShipAddressActivity: BaseMvpActivity<ShipAddressPresenter>(), ShipAddressV
             }
 
         }
+
+        mAdapter.setOnItemClickListener(object : BaseRecyclerViewAdapter.OnItemClickListener<ShipAddress>{
+            override fun onItemClick(item: ShipAddress, position: Int) {
+                Bus.send(SelectAddressEvent(item))
+                finish()
+            }
+        })
 
         mAddAddressBtn.onClick {
             startActivity<EditShipAddressActivity>()
