@@ -7,6 +7,7 @@
 		<activity android:name=".ui.activity.ShipAddressActivity"/>
 		<activity android:name=".ui.activity.EditShipAddressActivity"/>
 		<activity android:name=".ui.activity.OrderActivity"/>
+		<activity android:name=".ui.activity.OrderDetailActivity"/>
 	</application>
 
 </manifest>

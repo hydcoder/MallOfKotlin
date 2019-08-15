@@ -17,12 +17,14 @@ import com.hyd.order.injection.component.DaggerOrderComponent
 import com.hyd.order.injection.module.OrderModule
 import com.hyd.order.presenter.OrderListPresenter
 import com.hyd.order.presenter.view.OrderListView
+import com.hyd.order.ui.activity.OrderDetailActivity
 import com.hyd.order.ui.adapter.OrderAdapter
 import com.hyd.provider.common.ProviderConstant
 import com.hyd.provider.router.RouterPath
 import com.kennyc.view.MultiStateView
 import com.kotlin.base.ui.adapter.BaseRecyclerViewAdapter
 import kotlinx.android.synthetic.main.fragment_order.*
+import org.jetbrains.anko.support.v4.startActivity
 import org.jetbrains.anko.support.v4.toast
 
 /**
@@ -84,7 +86,6 @@ class OrderFragment : BaseMvpFragment<OrderListPresenter>(), OrderListView {
                         mPresenter.confirmOrder(order.id)
                     }
                     OrderConstant.OPT_ORDER_CANCEL -> {
-                        //mPresenter.cancelOrder(order.id)
                         showCancelDialog(order)
                     }
                 }
@@ -96,7 +97,7 @@ class OrderFragment : BaseMvpFragment<OrderListPresenter>(), OrderListView {
          */
         mAdapter.setOnItemClickListener(object : BaseRecyclerViewAdapter.OnItemClickListener<Order> {
             override fun onItemClick(item: Order, position: Int) {
-//                startActivity<OrderDetailActivity>(ProviderConstant.KEY_ORDER_ID to item.id)
+                startActivity<OrderDetailActivity>(ProviderConstant.KEY_ORDER_ID to item.id)
             }
         })
 

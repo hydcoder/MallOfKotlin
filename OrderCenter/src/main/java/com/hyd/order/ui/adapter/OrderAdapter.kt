@@ -1,5 +1,6 @@
 package com.hyd.order.ui.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -45,6 +46,7 @@ class OrderAdapter(context: Context) : BaseRecyclerViewAdapter<Order, OrderAdapt
     /*
         绑定数据
      */
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         super.onBindViewHolder(holder, position)
         val model = dataList[position]
@@ -85,24 +87,24 @@ class OrderAdapter(context: Context) : BaseRecyclerViewAdapter<Order, OrderAdapt
             OrderStatus.ORDER_WAIT_PAY -> {
                 holder.itemView.mOrderStatusNameTv.text = "待支付"
                 holder.itemView.mOrderStatusNameTv.setTextColor(mContext.resources.getColor(R.color.common_red))
-                setOptVisible(false, true, true, holder)
+                setOptVisible(confirmVisible = false, waitPayVisible = true, cancelVisible = true, holder = holder)
             }
             OrderStatus.ORDER_WAIT_CONFIRM -> {
                 holder.itemView.mOrderStatusNameTv.text = "待收货"
                 holder.itemView.mOrderStatusNameTv.setTextColor(mContext.resources.getColor(R.color.common_blue))
-                setOptVisible(true, false, true, holder)
+                setOptVisible(confirmVisible = true, waitPayVisible = false, cancelVisible = true, holder = holder)
             }
 
             OrderStatus.ORDER_COMPLETED -> {
                 holder.itemView.mOrderStatusNameTv.text = "已完成"
                 holder.itemView.mOrderStatusNameTv.setTextColor(mContext.resources.getColor(R.color.common_yellow))
-                setOptVisible(false, false, false, holder)
+                setOptVisible(confirmVisible = false, waitPayVisible = false, cancelVisible = false, holder = holder)
             }
 
             OrderStatus.ORDER_CANCELED -> {
                 holder.itemView.mOrderStatusNameTv.text = "已取消"
                 holder.itemView.mOrderStatusNameTv.setTextColor(mContext.resources.getColor(R.color.common_gray))
-                setOptVisible(false, false, false, holder)
+                setOptVisible(confirmVisible = false, waitPayVisible = false, cancelVisible = false, holder = holder)
             }
         }
 

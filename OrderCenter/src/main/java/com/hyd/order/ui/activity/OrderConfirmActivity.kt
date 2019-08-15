@@ -31,7 +31,7 @@ import org.jetbrains.anko.toast
  * 以梦为马，明日天涯。
  */
 @Route(path = RouterPath.OrderCenter.PATH_ORDER_CONFIRM)
-class OrderConfirmActivity: BaseMvpActivity<OrderConfirmPresenter>(), OrderConfirmView {
+class OrderConfirmActivity : BaseMvpActivity<OrderConfirmPresenter>(), OrderConfirmView {
 
     @Autowired(name = ProviderConstant.KEY_ORDER_ID)
     @JvmField
@@ -42,7 +42,8 @@ class OrderConfirmActivity: BaseMvpActivity<OrderConfirmPresenter>(), OrderConfi
     private lateinit var mOrder: Order
 
     override fun injectComponent() {
-        DaggerOrderComponent.builder().activityComponent(activityComponent).orderModule(OrderModule()).build().inject(this)
+        DaggerOrderComponent.builder().activityComponent(activityComponent).orderModule(OrderModule()).build()
+            .inject(this)
         mPresenter.mView = this
     }
 
@@ -59,7 +60,6 @@ class OrderConfirmActivity: BaseMvpActivity<OrderConfirmPresenter>(), OrderConfi
     private fun initView() {
         mAdapter = OrderGoodsAdapter(this)
         mOrderGoodsRv.layoutManager = LinearLayoutManager(this)
-        mOrderGoodsRv.adapter = mAdapter
 
         mSelectShipTv.onClick {
             startActivity<ShipAddressActivity>()
@@ -76,7 +76,7 @@ class OrderConfirmActivity: BaseMvpActivity<OrderConfirmPresenter>(), OrderConfi
 
     private fun initObserve() {
         Bus.observe<SelectAddressEvent>()
-            .subscribe{
+            .subscribe {
                 mOrder.shipAddress = it.address
                 updateAddressView()
             }
@@ -113,6 +113,11 @@ class OrderConfirmActivity: BaseMvpActivity<OrderConfirmPresenter>(), OrderConfi
     override fun onSubmitOrderResult(result: Boolean) {
         if (result) {
             toast("订单提交成功")
+            ARouter.getInstance().build(RouterPath.PaySDK.PATH_PAY)
+                .withInt(ProviderConstant.KEY_ORDER_ID, mOrder.id)
+                .withLong(ProviderConstant.KEY_ORDER_PRICE, mOrder.totalPrice)
+                .navigation()
+            finish()
         } else {
             toast("订单提交失败")
         }

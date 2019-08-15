@@ -4,6 +4,7 @@ import com.hyd.base.injection.PerComponentScope
 import com.hyd.base.injection.component.ActivityComponent
 import com.hyd.order.injection.module.OrderModule
 import com.hyd.order.ui.activity.OrderConfirmActivity
+import com.hyd.order.ui.activity.OrderDetailActivity
 import com.hyd.order.ui.fragment.OrderFragment
 import dagger.Component
 
@@ -19,5 +20,5 @@ import dagger.Component
 interface OrderComponent {
     fun inject(activity: OrderConfirmActivity)
     fun inject(fragment: OrderFragment)
-//    fun inject(activity:OrderDetailActivity)
+    fun inject(activity: OrderDetailActivity)
 }

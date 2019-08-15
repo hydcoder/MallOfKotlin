@@ -8,7 +8,7 @@
 			style="@style/MatchWrap"
 			app:titleText="订单详情"/>
 
-	<ScrollView
+	<android.support.v4.widget.NestedScrollView
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content">
 
@@ -56,17 +56,17 @@
 					android:paddingBottom="@dimen/common_margin_small"
 					android:text="支付信息"/>
 
-			<com.kotlin.base.widgets.LabelTextView
+			<com.hyd.base.widgets.LabelTextView
 					style="@style/MatchWrap"
 					app:labelText="支付类型:"
 					app:contentText="在线支付"/>
 
-			<com.kotlin.base.widgets.LabelTextView
+			<com.hyd.base.widgets.LabelTextView
 					style="@style/MatchWrap"
 					app:labelText="支付方式:"
 					app:contentText="支付宝支付"/>
 
-			<com.kotlin.base.widgets.LabelTextView
+			<com.hyd.base.widgets.LabelTextView
 					android:id="@+id/mTotalPriceTv"
 					style="@style/MatchWrap"
 					app:labelText="实付费用:"/>
@@ -89,5 +89,5 @@
 					android:layout_height="wrap_content"
 					style="@style/commonRecyclerView"/>
 		</LinearLayout>
-	</ScrollView>
+	</android.support.v4.widget.NestedScrollView>
 </LinearLayout>
