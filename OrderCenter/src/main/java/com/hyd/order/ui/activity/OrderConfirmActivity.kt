@@ -60,6 +60,7 @@ class OrderConfirmActivity : BaseMvpActivity<OrderConfirmPresenter>(), OrderConf
     private fun initView() {
         mAdapter = OrderGoodsAdapter(this)
         mOrderGoodsRv.layoutManager = LinearLayoutManager(this)
+        mOrderGoodsRv.adapter = mAdapter
 
         mSelectShipTv.onClick {
             startActivity<ShipAddressActivity>()

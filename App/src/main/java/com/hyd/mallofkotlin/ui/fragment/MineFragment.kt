@@ -19,6 +19,7 @@ import com.hyd.provider.common.isLogin
 import com.hyd.user.ui.activity.UserInfoActivity
 import kotlinx.android.synthetic.main.fragment_me.*
 import org.jetbrains.anko.startActivity
+import org.jetbrains.anko.support.v4.toast
 
 /**
  * Created by hydCoder on 2019/7/26.
@@ -26,7 +27,11 @@ import org.jetbrains.anko.startActivity
  */
 class MineFragment : BaseFragment(), View.OnClickListener {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         return inflater.inflate(R.layout.fragment_me, null)
     }
 
@@ -48,7 +53,7 @@ class MineFragment : BaseFragment(), View.OnClickListener {
         mWaitConfirmOrderTv.setOnClickListener(this)
         mCompleteOrderTv.setOnClickListener(this)
         mAllOrderTv.setOnClickListener(this)
-
+        mShareTv.setOnClickListener(this)
         mSettingTv.setOnClickListener(this)
         mAddressTv.setOnClickListener(this)
     }
@@ -93,6 +98,9 @@ class MineFragment : BaseFragment(), View.OnClickListener {
                 }
             }
 
+            R.id.mShareTv -> {
+                toast(R.string.coming_soon_tip)
+            }
             R.id.mAddressTv -> {
                 activity!!.startActivity<ShipAddressActivity>()
             }

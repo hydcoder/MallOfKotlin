@@ -18,6 +18,7 @@ import com.youth.banner.Transformer
 import kotlinx.android.synthetic.main.fragment_home.*
 import me.crosswall.lib.coverflow.CoverFlow
 import org.jetbrains.anko.support.v4.startActivity
+import org.jetbrains.anko.support.v4.toast
 
 /**
  * Created by hydCoder on 2019/7/26.
@@ -54,6 +55,9 @@ class HomeFragment : BaseFragment() {
         mNewsFlipperView.setData(arrayOf("夏日炎炎，第一波福利还有30秒到达战场", "新用户立领1000元优惠券", "大牌上新，诚意满满"))
         mSearchEt.onClick {
             startActivity<SearchGoodsActivity>()
+        }
+        mScanIv.onClick {
+            toast(R.string.coming_soon_tip)
         }
     }
 

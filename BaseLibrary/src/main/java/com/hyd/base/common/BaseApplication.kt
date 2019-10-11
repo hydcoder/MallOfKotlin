@@ -11,7 +11,7 @@ import com.hyd.base.injection.module.AppModule
  * Created by hydCoder on 2019/7/17.
  * 以梦为马，明日天涯。
  */
-class BaseApplication: Application() {
+open class BaseApplication: Application() {
 
     lateinit var appComponent: AppComponent
 

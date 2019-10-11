@@ -15,7 +15,7 @@ import javax.inject.Inject
 open abstract class BaseMvpActivity<T : BasePresenter<*>> : BaseActivity(), BaseView {
 
     lateinit var activityComponent: ActivityComponent
-    lateinit var loadingDialog: ProgressLoading
+    private lateinit var loadingDialog: ProgressLoading
 
     //Presenter泛型，Dagger注入
     @Inject

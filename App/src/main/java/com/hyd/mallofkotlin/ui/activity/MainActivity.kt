@@ -15,6 +15,8 @@ import com.hyd.goodscenter.ui.fragment.CategoryFragment
 import com.hyd.mallofkotlin.R
 import com.hyd.mallofkotlin.ui.fragment.HomeFragment
 import com.hyd.mallofkotlin.ui.fragment.MineFragment
+import com.hyd.messagecenter.ui.fragment.MessageFragment
+import com.hyd.provider.event.MessageBadgeEvent
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.toast
 import java.util.*
@@ -26,7 +28,7 @@ class MainActivity : BaseActivity() {
     private val mHomeFragment: HomeFragment by lazy { HomeFragment() }
     private val mCategoryFragment: CategoryFragment by lazy { CategoryFragment() }
     private val mCartFragment: CartFragment by lazy { CartFragment() }
-    private val mMsgFragment: HomeFragment by lazy { HomeFragment() }
+    private val mMsgFragment: MessageFragment by lazy { MessageFragment() }
     private val mMineFragment: MineFragment by lazy { MineFragment() }
 
     private var pressTime: Long = 0
@@ -99,6 +101,10 @@ class MainActivity : BaseActivity() {
         Bus.observe<UpdateCartSizeEvent>()
             .subscribe {
                 loadCartSize()
+            }.registerInBus(this)
+        Bus.observe<MessageBadgeEvent>()
+            .subscribe {
+                mBottomNavBar.checkMsgBadge(it.isVisible)
             }.registerInBus(this)
     }
 
