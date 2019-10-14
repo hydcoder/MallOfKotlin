@@ -5,37 +5,37 @@
 
 ### Preview
 
-![注册](src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-173925.png" style="zoom:50%;")
+<img src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-173925.png" style="zoom:50%;"/>
 
-![登录](src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-173914.png" style="zoom:50%;")
+<img src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-173914.png" style="zoom:50%;"/>
 
-![我的](src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-171847.png" style="zoom:50%;")
+<img src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-171847.png" style="zoom:50%;"/>
 
-![个人信息](src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-173852.png" style="zoom:50%;")
+<img src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-173852.png" style="zoom:50%;"/>
 
-![首页](src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-171652.png" style="zoom:50%;")
+<img src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-171652.png" style="zoom:50%;"/>
 
-![商品分类](src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-171720.png" style="zoom:50%;")
+<img src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-171720.png" style="zoom:50%;"/>
 
-![商品列表](src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-171742.png" style="zoom:50%;")
+<img src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-171742.png" style="zoom:50%;"/>
 
-![商品详情](src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-171755.png" style="zoom:50%;")
+<img src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-171755.png" style="zoom:50%;"/>
 
-![sku](src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-171804.png" style="zoom:50%;")
+<img src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-171804.png" style="zoom:50%;"/>
 
-![商品搜索](src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-171827.png" style="zoom:50%;")
+<img src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-171827.png" style="zoom:50%;"/>
 
-![购物车](src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-171910.png" style="zoom:50%;")
+<img src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-171910.png" style="zoom:50%;"/>
 
-![消息](src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-171839.png" style="zoom:50%;")
+<img src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-171839.png" style="zoom:50%;"/>
 
-![订单确认](src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-173812.png" style="zoom:50%;")
+<img src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-173812.png" style="zoom:50%;"/>
 
-![收银台](src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-173827.png" style="zoom:50%;")
+<img src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-173827.png" style="zoom:50%;"/>
 
-![地址管理](src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-173840.png" style="zoom:50%;")
+<img src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-173840.png" style="zoom:50%;"/>
 
-![订单列表](src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-171859.png" style="zoom:50%;")
+<img src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-171859.png" style="zoom:50%;"/>
 
 
 
