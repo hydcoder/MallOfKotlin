@@ -5,22 +5,21 @@
 
 ### Preview
 
-<img src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-173925.png" style="zoom:30%;"/>
-<img src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-173914.png" style="zoom:30%;"/>
-<img src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-171847.png" style="zoom:30%;"/>
-<img src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-173852.png" style="zoom:30%;"/>
-<img src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-171652.png" style="zoom:30%;"/>
-<img src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-171720.png" style="zoom:30%;"/>
-<img src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-171742.png" style="zoom:30%;"/>
-<img src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-171755.png" style="zoom:30%;"/>
-<img src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-171804.png" style="zoom:30%;"/>
-<img src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-171827.png" style="zoom:30%;"/>
-<img src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-171910.png" style="zoom:30%;"/>
-<img src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-171839.png" style="zoom:30%;"/>
-<img src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-173812.png" style="zoom:30%;"/>
-<img src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-173827.png" style="zoom:30%;"/>
-<img src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-173840.png" style="zoom:30%;"/>
-<img src="https://github.com/hydcoder/MallOfKotlin/blob/master/preview/device-2019-10-11-171859.png" style="zoom:30%;"/>
+<img src="preview/device-2019-10-11-173925.png" width ="40%"/> <img src="preview/device-2019-10-11-173914.png" width ="40%"/>
+
+<img src="preview/device-2019-10-11-171847.png" width ="40%"/> <img src="preview/device-2019-10-11-173852.png" width ="40%"/>
+
+<img src="preview/device-2019-10-11-171652.png" width ="40%"/> <img src="preview/device-2019-10-11-171720.png" width ="40%"/>
+
+<img src="preview/device-2019-10-11-171742.png" width ="40%"/> <img src="preview/device-2019-10-11-171755.png" width ="40%"/>
+
+<img src="preview/device-2019-10-11-171804.png" width ="40%"/> <img src="preview/device-2019-10-11-171827.png" width ="40%"/>
+
+<img src="preview/device-2019-10-11-171910.png" width ="40%"/> <img src="preview/device-2019-10-11-171839.png" width ="40%"/>
+
+<img src="preview/device-2019-10-11-173812.png" width ="40%"/> <img src="preview/device-2019-10-11-173827.png" width ="40%"/>
+
+<img src="preview/device-2019-10-11-173840.png" width ="40%"/> <img src="preview/device-2019-10-11-171859.png" width ="40%"/>
 
 
 
